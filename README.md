@@ -12,7 +12,7 @@ This project develops a deep learning system for automated detection and localis
 **Email:** ec25075@qmul.ac.uk  
 **Supervisor:** Dr. Dimitrios  
 **Institution:** Queen Mary University of London  
-**Programme:** MSc Electronic Engineering and Computer Science  
+**Programme:** MSc Machine Learning for Visual Data Analytics
 
 ---
 
