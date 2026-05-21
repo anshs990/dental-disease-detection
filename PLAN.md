@@ -25,16 +25,6 @@
 
 ---
 
-## Submission Tiers
-
-| Tier | What to submit | Target grade |
-|---|---|---|
-| Tier 1 — Minimum | 5 notebooks with all outputs visible + dissertation PDF | Pass |
-| Tier 2 — Target | Tier 1 + src/ Python modules + README + GitHub history | Merit |
-| Tier 3 — Stretch | Tier 2 + Django demo app with Grad-CAM overlay | Distinction |
-
----
-
 ## Dataset Documentation
 
 | Dataset | Modality | Annotation | Diseases | Images | Role |
