@@ -278,7 +278,7 @@ wandb.finish()
 - Reproducibility — every experiment is fully documented
 - Supervisor can view results via shared link — no need to screenshot
 - Results chapter writes itself — export tables directly from W&B
-- Shows professional MLOps practice — examiners will notice
+- Shows professional MLOps practice 
 
 ### Naming convention for runs
 ```
