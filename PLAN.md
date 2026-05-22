@@ -22,6 +22,7 @@
 | Demo App | Django (mobile-responsive via Bootstrap) | Proof-of-concept system artefact |
 | CT / CBCT | Literature review only — no implementation | Out of scope for implementation, documented in dataset table |
 | Mobile App | Not in scope | Too complex alongside ML work — Django is mobile-responsive instead |
+| MLOps Tool | Weights & Biases (W&B) | Experiment tracking — logs hyperparameters, metrics, and model weights automatically |
 
 ---
 
@@ -114,6 +115,11 @@ These models will be reviewed and compared in the dissertation literature review
 - [ ] Three-way comparison table in dissertation
 - [ ] Write `src/models.py`, `src/train.py`, `src/evaluate.py` (if time)
 
+**W&B Experiment Tracking**
+- [ ] Set up W&B project — `dental-disease-detection`
+- [ ] Log all hyperparameters, metrics, and weights for every run
+- [ ] Export comparison table from W&B for dissertation results chapter
+
 **GPU:** University 15GB GPU (all three models fit comfortably)
 
 ---
@@ -137,6 +143,7 @@ These models will be reviewed and compared in the dissertation literature review
 - [ ] Evaluate: AP50, AP75, mAP, AR per disease class
 - [ ] Compare directly against HierarchicalDet baseline (AP50: 0.550)
 - [ ] Focus comparison on Diagnosis and Quadrant subtasks (not Enumeration)
+- [ ] Log all YOLOv8 runs to W&B for experiment tracking
 
 **GPU:** University 15GB GPU or Lightning AI A100
 
@@ -211,6 +218,79 @@ These models will be reviewed and compared in the dissertation literature review
 
 ---
 
+## MLOps — Weights & Biases (W&B)
+
+**Tool:** Weights & Biases  
+**Purpose:** Experiment tracking across all training runs  
+**Used in:** `03_classification.ipynb` and `04_detection.ipynb` only  
+**Dashboard:** https://wandb.ai  
+
+### Setup
+```bash
+pip install wandb
+wandb login  # paste your API key from wandb.ai/authorize
+```
+
+### How to use in every training notebook
+```python
+import wandb
+
+# Start a run — give it a descriptive name
+wandb.init(
+    project="dental-disease-detection",
+    name="ResNet50_lr0.001_batch32_epoch50",
+    config={
+        "model": "ResNet50",
+        "learning_rate": 0.001,
+        "batch_size": 32,
+        "epochs": 50,
+        "optimizer": "Adam",
+        "loss": "CrossEntropyLoss",
+        "class_weights": True,
+        "image_size": 224,
+        "dataset": "DENTEX"
+    }
+)
+
+# Inside training loop — log metrics every epoch
+wandb.log({
+    "epoch": epoch,
+    "train_loss": train_loss,
+    "val_loss": val_loss,
+    "val_accuracy": val_acc,
+    "val_f1": val_f1
+})
+
+# At the end — save model weights to W&B
+wandb.save("models/resnet50_best.pt")
+wandb.finish()
+```
+
+### What W&B logs automatically
+- Loss and accuracy curves per epoch
+- Hyperparameters for every run
+- Model weights (stored in cloud)
+- GPU utilisation and memory
+- Training time per epoch
+- Side-by-side comparison of all runs
+
+### Why this matters for dissertation
+- Reproducibility — every experiment is fully documented
+- Supervisor can view results via shared link — no need to screenshot
+- Results chapter writes itself — export tables directly from W&B
+- Shows professional MLOps practice — examiners will notice
+
+### Naming convention for runs
+```
+{model}_{lr}_{batch}_{epochs}_{notes}
+e.g. ResNet50_lr0.001_batch32_ep50_baseline
+     DenseNet121_lr0.0001_batch16_ep50_weighted
+     ViT_lr0.00005_batch8_ep30_finetuned
+     YOLOv8_640_ep100_baseline
+```
+
+---
+
 ## Baseline Reference
 
 **Model:** HierarchicalDet (Hamamci et al., 2023)  
@@ -262,4 +342,6 @@ Update checkboxes as each phase is completed and commit the change.
 | Tufts Dental Database | https://tdd.ece.tufts.edu/ |
 | Periapical Dataset | https://pmc.ncbi.nlm.nih.gov/articles/PMC11177072/ |
 | Roboflow Dental | https://universe.roboflow.com/search?q=dental+x+ray |
+| Weights & Biases | https://wandb.ai |
+| W&B Quickstart | https://docs.wandb.ai/quickstart |
 
