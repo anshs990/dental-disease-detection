@@ -3,7 +3,7 @@
 **Student:** Shree Ramji | ec25075@qmul.ac.uk  
 **Supervisor:** Dr. Dimitrios  
 **Institution:** Queen Mary University of London  
-**Programme:** MSc Electronic Engineering and Computer Science  
+**Programme:** MSc Machine Learning for Visual Data Analytics  
 
 ---
 
@@ -316,8 +316,8 @@ Update checkboxes as each phase is completed and commit the change.
 
 | Phase | Notebook / Deliverable | Status |
 |---|---|---|
-| 1 | 01_eda.ipynb | 🔲 Not started |
-| 2 | 02_preprocessing.ipynb | 🔲 Not started |
+| 1 | 01_eda.ipynb | ✅ Complete |
+| 2 | 02_preprocessing.ipynb | ✅ Complete |
 | 3 | 03_classification.ipynb (ResNet50) | 🔲 Not started |
 | 3 | 03_classification.ipynb (DenseNet121) | 🔲 Not started |
 | 3 | 03_classification.ipynb (ViT-B/16) | 🔲 Not started |
