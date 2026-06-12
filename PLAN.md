@@ -318,11 +318,11 @@ Update checkboxes as each phase is completed and commit the change.
 |---|---|---|
 | 1 | 01_eda.ipynb | ✅ Complete |
 | 2 | 02_preprocessing.ipynb | ✅ Complete |
-| 3 | 03_classification.ipynb (ResNet50) | 🔲 Not started |
-| 3 | 03_classification.ipynb (DenseNet121) | 🔲 Not started |
-| 3 | 03_classification.ipynb (ViT-B/16) | 🔲 Not started |
-| 4 | 04_detection.ipynb (YOLOv8) | 🔲 Not started |
-| 4 | 04_detection.ipynb (Faster R-CNN) | 🔲 Not started |
+| 3 | 03_classification.ipynb (ResNet50) | ✅ Complete |
+| 3 | 03_classification.ipynb (DenseNet121) | ✅ Complete |
+| 3 | 03_classification.ipynb (ViT-B/16) | ✅ Complete |
+| 4 | 04_detection.ipynb (YOLOv8) | ✅ Complete |
+| 4 | 04_detection.ipynb (Faster R-CNN) | ⏭ Skipped — time constraint |
 | 5 | 05_gradcam.ipynb | 🔲 Not started |
 | 6 | Django demo app | 🔲 Not started |
 | 7 | Dissertation | 🔲 Not started |
