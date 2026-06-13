@@ -17,7 +17,7 @@
 | Baseline | HierarchicalDet (AP50: 0.550) | Official DENTEX challenge organiser baseline |
 | Classification Models | ResNet50, DenseNet121, ViT-B/16 | CNN vs CNN vs Transformer comparison |
 | Detection Model | YOLOv8 (primary), Faster R-CNN (if time) | YOLOv8 easier to set up, YOLO format supported by DENTEX |
-| Explainability | Grad-CAM | Applied to ResNet50 and DenseNet121 |
+| Explainability | Grad-CAM + Attention Rollout | Applied to ResNet50, DenseNet121, ViT-B/16 |
 | Model Review | CNN / ViT / Mamba / VLMs | Comparative written review in dissertation — no Mamba or VLM implementation |
 | Demo App | Django (mobile-responsive via Bootstrap) | Proof-of-concept system artefact |
 | CT / CBCT | Literature review only — no implementation | Out of scope for implementation, documented in dataset table |
@@ -323,7 +323,7 @@ Update checkboxes as each phase is completed and commit the change.
 | 3 | 03_classification.ipynb (ViT-B/16) | ✅ Complete |
 | 4 | 04_detection.ipynb (YOLOv8) | ✅ Complete |
 | 4 | 04_detection.ipynb (Faster R-CNN) | ⏭ Skipped — time constraint |
-| 5 | 05_gradcam.ipynb | 🔲 Not started |
+| 5 | 05_gradcam.ipynb | ✅ Complete |
 | 6 | Django demo app | 🔲 Not started |
 | 7 | Dissertation | 🔲 Not started |
 
