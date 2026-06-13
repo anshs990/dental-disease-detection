@@ -105,7 +105,7 @@ dental-disease-detection/
 
 W&B Dashboard: https://wandb.ai/shree-cloudarcade-personal/dental-disease-detection
 
-All training runs, metrics, and hyperparameters logged — 15 runs total (YOLOv8n/m/l/x + classification models).
+All training runs, metrics, and hyperparameters logged — 12 runs total (YOLOv8n/m/l/x training + test eval + classification models).
 
 ---
 
