@@ -101,6 +101,14 @@ dental-disease-detection/
 
 ---
 
+## Experiment Tracking
+
+W&B Dashboard: https://wandb.ai/shree-cloudarcade-personal/dental-disease-detection
+
+All training runs, metrics, and hyperparameters logged — 15 runs total (YOLOv8n/m/l/x + classification models).
+
+---
+
 ## Installation
 
 ```bash
